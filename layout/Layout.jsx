@@ -5,11 +5,9 @@ import Footer from './Footer'
 const Layout = ({ children }) => {
     return (
         <>
-            <div id="page" className="s-pagewrap ss-home">
-                <Header />
-                {children}
-                <Footer />
-            </div>
+            <Header />
+            {children}
+            <Footer />
         </>
     )
 }

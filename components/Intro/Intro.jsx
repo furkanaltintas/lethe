@@ -1,23 +1,24 @@
-import Link from "next/link"
+import Image from "next/image";
 
-const Intro = () => {
+const Intro = ({ intro }) => {
+    if (!intro) return null;
+
     return (
         <section id="intro" className="s-intro">
             <div className="row s-intro__content width-sixteen-col">
                 <div className="column lg-12 s-intro__content-inner grid-block">
                     <div className="s-intro__content-text">
-                        <div className="s-intro__content-pretitle text-pretitle">Hello, I'm Monica</div>
+                        <div className="s-intro__content-pretitle text-pretitle">
+                            {intro.title}
+                        </div>
                         <h1 className="s-intro__content-title">
-                            I create marketing <br />
-                            strategies for your <br />
-                            business that get <br />
-                            results.
+                            {intro.description}
                         </h1>
                     </div>
 
                     <div className="s-intro__content-media">
                         <div className="s-intro__content-media-inner">
-                            <img src="/images/intro-bg.jpg" srcSet="images/intro-bg.jpg 1x, images/intro-bg@2x.jpg 2x" alt="" />
+                            <Image src={intro.imagePath} alt={intro.title} width={440} height={550} loading="lazy" />
                             <div className="lines">
                                 <span></span>
                             </div>
@@ -33,11 +34,8 @@ const Intro = () => {
                             <span>Scroll for more</span>
                         </a>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
     )
 }

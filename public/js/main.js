@@ -1,6 +1,3 @@
-import Swiper from "swiper";
-import "swiper/css";
-
 (function (html) {
   "use strict";
 
@@ -63,7 +60,7 @@ import "swiper/css";
       if (window.matchMedia("(min-width: 901px)").matches) {
         if (siteBody.classList.contains("menu-is-open"))
           siteBody.classList.remove("menu-is-open");
-        if (toggleButton.classList.contains("is-clicked"))
+        if (toggleButton && toggleButton.classList.contains("is-clicked"))
           toggleButton.classList.remove("is-clicked");
       }
     });
